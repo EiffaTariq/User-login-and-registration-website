@@ -1,0 +1,40 @@
+﻿@* Edit User
+< form method = "post" >
+    < input type = "text" name = "Name" value = "@Model.Name" required />
+    < input type = "email" name = "Email" value = "@Model.Email" required />
+    < input type = "password" name = "Password" required placeholder = "Password" />
+    < button type= "submit" > Update </ button >
+</ form >
+< div > @ViewBag.Message </ div >
+ *@
+ @model UserLoginAndRegistration.Models.User
+
+@{
+    ViewData["Title"] = "Edit User";
+}
+
+<h1>Edit User</h1>
+
+<form method="post">
+    <div>
+        <label for="Name">Name:</label>
+        <input type="text" name="Name" id="Name" value="@Model.Name" required />
+    </div>
+
+    <div>
+        <label for="Email">Email:</label>
+        <input type="email" name="Email" id="Email" value="@Model.Email" required />
+    </div>
+
+    <div>
+        <label for="Password">Password:</label>
+        <input type="password" name="Password" id="Password" required placeholder="Enter new password" />
+    </div>
+
+    <button type="submit">Update</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-info">@ViewBag.Message</div> <!-- Stylish notification -->
+}

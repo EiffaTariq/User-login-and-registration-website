@@ -1,0 +1,18 @@
+﻿@* User details
+<h1>User Details</h1>
+<p>Name: @Model.Name</p>
+<p>Email: @Model.Email</p>
+<p>Created Date: @Model.CreatedDate</p> *@
+@model UserLoginAndRegistration.Models.User
+
+@{
+    ViewData["Title"] = "User Details";
+}
+
+<h1>User Details</h1>
+
+<p><strong>Name:</strong> @Model.Name</p>
+<p><strong>Email:</strong> @Model.Email</p>
+<p><strong>Created Date:</strong> @Model.CreatedDate.ToString("g")</p> <!-- Formats date and time -->
+<!-- Add a Back Button -->
+<a href="@Url.Action("Index", "Home")" class="btn btn-primary">Back to User List</a>
